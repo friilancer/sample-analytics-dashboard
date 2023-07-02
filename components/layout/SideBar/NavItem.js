@@ -8,7 +8,7 @@ const NavItem = ({
     isActive= true
 }) => {
     return (
-        <li className={`${styles.nav__item} ${isActive ? styles.active : ''}`}>
+        <li className={`${styles.navitem} ${isActive ? styles.navitem__active : ''}`}>
             <Link href={href}>
                 <a>
                     <img src={`/assets/icons/${icon}`} alt="navigation icon" />

@@ -64,13 +64,13 @@
     margin: 0;
 }
 
-.nav__item{
+.navitem{
     margin-bottom: 14px;
     font-size: 0.9rem;
     color: var(--gray-400);
 }
 
-.nav__item a{
+.navitem a{
     display: grid;
     grid-template-columns: 30px 1fr;
     gap: var(--nav-item-gap);
@@ -78,12 +78,12 @@
     padding-left: var(--item-padding);
 }
 
-.active{
+.navitem__active{
     color: var(--color-secondary);
     border-left: 2px solid var(--color-secondary);
 }
 
-.nav__item img{
+.navitem img{
     margin: auto;
     width: var(--icon-width);
 }
