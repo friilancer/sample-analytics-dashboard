@@ -11,9 +11,7 @@ export default function Home() {
         <link rel="icon" href="/assets/icons/logo.png" />
       </Head>
 
-      <main className=''>
-        Dashboard
-      </main>
+      <main className=''></main>
 
     </div>
   )

@@ -8,7 +8,9 @@
     grid-template-rows: auto auto 1fr;
     --icon-width: 18px;
     --nav-item-gap: 5px;
-    position: sticky;
+    position: fixed;
+    top: 0;
+    left: 0;
 }
 
 .sidebar__logo{
