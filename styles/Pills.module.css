@@ -1,0 +1,13 @@
+.pill{
+    border: 1px solid var(--gray-0);
+    background: #fff;
+    border-radius: 9999px;
+    padding: 12px 16px;
+    cursor: pointer;
+}
+
+.pill__active{
+    border: 1px solid var(--color-secondary);
+    color: var(--color-secondary);
+    background: var(--orange-100);
+}

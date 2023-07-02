@@ -1,0 +1,37 @@
+.container{
+    padding: 4px 24px;
+}
+
+.title{
+    font-size: 1.1rem;
+    color: var(--color-primary);
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.header__analytics, .header__text{
+    font-size: 0.8rem;
+}
+
+.header__text{
+    color: var(--gray-500);
+}
+
+.header__analytics{
+    color: var(--color-secondary);
+}
+
+.filters{
+    display: flex;
+    align-items: center;
+    margin: 14px 0;
+}
+
+.filters>button{
+    margin-right: 14px;
+}
