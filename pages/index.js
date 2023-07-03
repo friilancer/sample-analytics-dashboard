@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PageView from '../components/dashboard/PageViews'
 import StatsCard from '../components/dashboard/StatsCard'
 import Pill from '../components/pill'
@@ -28,72 +28,24 @@ const Home = () => {
     },
 
   ]
+  const [graphData, setGraphData] = useState({
+    "views" : {}
+  })
+  const [topLocations, setTopLocations] = useState([])
+  const [topSources, setTopSources] = useState([])
 
-  let data = {
-    "graph_data": {
-      "views": {
-        "2022-07-31": 1,
-        "2022-08-01": 3,
-        "2022-08-02": 3,
-        "2022-08-03": 7,
-        "2022-08-04": 8,
-        "2022-08-05": 5,
-        "2022-08-06": 20,
-        "2022-08-07": 50,
-        "2022-08-08": 100,
-        "2022-08-09": 2
-      }
-    },
-    "top_locations": [
-      {
-        "country": "Nigeria",
-        "count": 68,
-        "percent": 34
-      },
-      {
-        "country": "Germany",
-        "count": 37,
-        "percent": 19
-      },
-      {
-        "country": "Ghana",
-        "count": 50,
-        "percent": 25
-      },
-      {
-        "country": "Finland",
-        "count": 40,
-        "percent": 20
-      },
-      {
-        "country": "United Kingdom",
-        "count": 4,
-        "percent": 2
-      }
-    ],
-    "top_sources": [
-      {
-        "source": "google",
-        "count": 50,
-        "percent": 25
-      },
-      {
-        "source": "instagram",
-        "count": 68,
-        "percent": 34
-      },
-      {
-        "source": "facebook",
-        "count": 40,
-        "percent": 20
-      },
-      {
-        "source": "linkedin",
-        "count": 41,
-        "percent": 21
-      }
-    ]
-  }
+  useEffect(()  => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("https://fe-task-api.mainstack.io/")
+        const data = await response.json()
+        setGraphData(data?.graph_data)
+        setTopLocations(data?.top_locations)
+        setTopSources(data?.top_sources)
+      } catch (e) { }
+    }
+    fetchData()
+  }, [])
 
   return (
     <>
@@ -132,17 +84,17 @@ const Home = () => {
         <div className={styles.pane__pageview}>
           <PageView
             subTitle={filterOptions[activeFilterId].label}
-            graphData={data.graph_data}
+            graphData={graphData}
           />
         </div>
         <div className={styles.pane__statscard}>
           <StatsCard 
             cardTitle='Top Locations'
-            graphData={data.top_locations.map(({country, percent}) => ({root : country, percent}))}
+            graphData={topLocations.map(({country, percent}) => ({root : country, percent}))}
           />
           <StatsCard 
             cardTitle='Top Sources'
-            graphData={data.top_sources.map(({source, percent}) => ({root: source, percent}))}
+            graphData={topSources.map(({source, percent}) => ({root: source, percent}))}
           />
         </div>
       </div>
