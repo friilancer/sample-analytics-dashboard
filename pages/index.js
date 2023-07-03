@@ -7,6 +7,7 @@ import styles from '../styles/Dashboard.module.css'
 
 const Home = () => {
   const [activeFilterId, setActiveFilterId] = useState(4)
+  const [isLoading, setIsLoading] = useState(true)
   const filterOptions = [
     {
       label: '1 Day',
@@ -42,7 +43,9 @@ const Home = () => {
         setGraphData(data?.graph_data)
         setTopLocations(data?.top_locations)
         setTopSources(data?.top_sources)
-      } catch (e) { }
+      } finally {
+        setIsLoading(false)
+      }
     }
     fetchData()
   }, [])
@@ -85,16 +88,19 @@ const Home = () => {
           <PageView
             subTitle={filterOptions[activeFilterId].label}
             graphData={graphData}
+            isLoading={isLoading}
           />
         </div>
         <div className={styles.pane__statscard}>
           <StatsCard 
             cardTitle='Top Locations'
             graphData={topLocations.map(({country, percent}) => ({root : country, percent}))}
+            isLoading={isLoading}
           />
           <StatsCard 
             cardTitle='Top Sources'
             graphData={topSources.map(({source, percent}) => ({root: source, percent}))}
+            isLoading={isLoading}
           />
         </div>
       </div>
