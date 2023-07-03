@@ -15,7 +15,7 @@ const Home = () => {
       label: '3 Days',
     },
     {
-      label: '7 Day',
+      label: '7 Days',
     },
     {
       label: '30 Days',
@@ -113,12 +113,13 @@ const Home = () => {
          </div>
         </div>
 
-        <div className={styles.filters}>
+        <div className={styles.filters__container}>
+          <div className={styles.filters}>
           {
             filterOptions.map((option, index) => {
               return (
                 <Pill
-                  key={index}
+                  id={index}
                   text={option.label}
                   isActive={activeFilterId === index}
                   onClick={() => setActiveFilterId(index)}
@@ -126,9 +127,11 @@ const Home = () => {
               )
             })
           }
+          </div>
         </div>
         <div className={styles.pane__pageview}>
           <PageView
+            subTitle={filterOptions[activeFilterId].label}
             graphData={data.graph_data}
           />
         </div>

@@ -26,11 +26,26 @@
     color: var(--color-secondary);
 }
 
-.filters{
+.filters__container{
     display: flex;
-    align-items: center;
     margin: 18px 0;
+    overflow: hidden;
+    width: min-content;
+    max-width: 95vw;
 }
+
+.filters{
+    align-items: center;
+    display: flex;
+    overflow: scroll;
+    -ms-overflow-style: none; 
+    scrollbar-width: none; 
+}
+
+.filters::-webkit-scrollbar {
+    display: none;
+  }
+  
 
 .filters>button{
     margin-right: 14px;

@@ -1,8 +1,32 @@
 .layout{
-    min-height: 100vh;
+    display: grid;
     max-width: 1280px;
 }
 
-.layout main{
-    margin-left: 250px;
+.layout__logo{
+    width: 40px;
+}
+
+.layout__toggle{
+    width: 20px;
+    cursor: pointer;
+}
+
+.layout__header{
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+    .layout{
+        min-height: 100vh;
+    }
+    .layout>main{
+        margin-left: 250px;
+    }
+    .layout__header{
+        display: none;
+    }
 }

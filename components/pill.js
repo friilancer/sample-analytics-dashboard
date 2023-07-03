@@ -1,12 +1,13 @@
 import styles from '../styles/Pills.module.css'
 
 const Pill = ({
-    text = '',
+    id = "",
+    text = "",
     isActive = false,
     onClick = () => {}
 }) => {
     return (
-        <button className={`${styles.pill} ${isActive ? styles.pill__active : ''}`} onClick={onClick}>
+        <button key={id} className={`${styles.pill} ${isActive ? styles.pill__active : ''}`} onClick={onClick}>
             {text}
         </button>
     )
