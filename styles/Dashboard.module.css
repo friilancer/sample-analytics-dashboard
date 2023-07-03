@@ -14,24 +14,34 @@
     margin: 14px 0;
 }
 
-.header__analytics, .header__text{
+.header__actions, .header__subtitle{
     font-size: 0.8rem;
 }
 
-.header__text{
+.header__subtitle{
     color: var(--gray-500);
 }
 
-.header__analytics{
+.header__actions{
     color: var(--color-secondary);
 }
 
 .filters{
     display: flex;
     align-items: center;
-    margin: 14px 0;
+    margin: 18px 0;
 }
 
 .filters>button{
     margin-right: 14px;
+}
+
+.pane__pageview{
+    margin-bottom: 18px;
+}
+
+.pane__statscard{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 20px;
 }

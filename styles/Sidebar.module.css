@@ -6,7 +6,6 @@
     --item-padding: 20px;
     display: grid;
     grid-template-rows: auto auto 1fr;
-    --icon-width: 18px;
     --nav-item-gap: 5px;
     position: fixed;
     top: 0;

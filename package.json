@@ -9,8 +9,11 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "chart.js": "^4.3.0",
+    "dayjs": "^1.11.9",
     "next": "12",
     "react": "18.2.0",
+    "react-chartjs-2": "^5.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
