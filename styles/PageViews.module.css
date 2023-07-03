@@ -27,6 +27,10 @@
     cursor: pointer;
 }
 
+.chart__title{
+    font-size: 2.5rem;
+}
+
 .chart__container{
     max-height: 45vh;
 }
