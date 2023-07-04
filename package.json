@@ -2,9 +2,6 @@
   "name": "sample-dashboard",
   "version": "0.1.0",
   "private": true,
-  "engines": {
-    "node": "16.19.0"
-  },
   "scripts": {
     "dev": "next -p 3005",
     "build": "next build",
