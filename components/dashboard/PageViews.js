@@ -73,7 +73,6 @@ const PageView = ({
                                             display: false,
                                         },
                                         grace: "5%",
-                                        offset: true
                                     },
                                     y: {
                                         border : {
