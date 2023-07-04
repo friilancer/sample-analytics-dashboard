@@ -76,13 +76,9 @@ const PageView = ({
                                         offset: true
                                     },
                                     y: {
-                                        border: {
-                                            color: "#fff",
-                                            dash: [5],
-                                            dashOffset: 3
-                                        },
-                                        grid:{
-                                            drawTicks: false,
+                                        border : {
+                                            display: false,
+                                            dash: [10]
                                         },
                                         grace: "1%",
                                     }
