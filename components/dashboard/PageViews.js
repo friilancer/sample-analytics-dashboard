@@ -80,7 +80,7 @@ const PageView = ({
                                     },
                                     y: {
                                         border : {
-                                            dash: [10],
+                                            dash: [5,8],
                                             dashOffset: 4,
                                             color: '#fff'
                                         },
