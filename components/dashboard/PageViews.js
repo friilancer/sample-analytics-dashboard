@@ -19,8 +19,8 @@ const PageView = ({
     useEffect(() => {
         const chart = chartRef.current;
         if (chart) {
-            //chartRef.current.canvas.style.width = `${chartContainerRef.current.clientWidth}px`;
-            //chartRef.current.canvas.style.height = `${Math.ceil(window.innerHeight*0.4)}px`;
+            chartRef.current.canvas.style.width = `${chartContainerRef.current.clientWidth}px`;
+            chartRef.current.canvas.style.height = `${Math.ceil(window.innerHeight*0.4)}px`;
         };
     }, [innerWidth, isLoading])
 
