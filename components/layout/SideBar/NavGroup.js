@@ -1,5 +1,6 @@
 import NavItem from "./NavItem"
 import styles from "../../../styles/Sidebar.module.css"
+import { Fragment } from "react"
 
 const NavGroup = ({ items = [], title = "", activeTile = "Dashboard" }) => {
     return (
@@ -9,12 +10,14 @@ const NavGroup = ({ items = [], title = "", activeTile = "Dashboard" }) => {
                 {
                     items.map((item, index) => {
                         return (
-                            <NavItem
-                                key={index}
-                                isActive={item.text === activeTile}
-                                icon={item.icon}
-                                text={item.text}
-                            />
+                            <Fragment key={index}>
+                                <NavItem
+                                    key={index}
+                                    isActive={item.text === activeTile}
+                                    icon={item.icon}
+                                    text={item.text}
+                                />
+                            </Fragment>
                         )
                     })
                 }

@@ -69,9 +69,9 @@ const Card = ({
                             {
                                 graphData.map(({root, percent}, index) => {
                                     return (
-                                        <div className={styles.label}>
+                                        <div key={index} className={styles.label}>
                                             <div className={styles.label__source}>
-                                                <img src={`/assets/icons/${root}.png`} />
+                                                <img src={`/assets/icons/${root}.png`} alt="icon"/>
                                                 <span>{root}</span>
                                             </div>
                                             <div className={styles.label__count}>{percent}</div>

@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { Fragment, useState } from "react"
 import NavGroup from "./NavGroup"
 import styles from "../../../styles/Sidebar.module.css"
 
@@ -72,22 +72,24 @@ const SideBar = ({
                     {
                         Object.values(navItems).map(({title, items}, index) => {
                             return (
-                                <NavGroup
-                                    key={index}
-                                    title={title}
-                                    items={items}
-                                    activeTile={active}
-                                />
+                                <Fragment key={index}>
+                                    <NavGroup
+                                        key={index}
+                                        title={title}
+                                        items={items}
+                                        activeTile={active}
+                                    />
+                                </Fragment>
                             )
                         })
                     }
                 </div>
                 <div className={styles.sidebar__footer}>
                     <div>
-                        <img src={userAvatar} className={styles.footer__avatar}/>
+                        <img src={userAvatar} alt="avatar" className={styles.footer__avatar}/>
                         <span className={styles.footer__text}>{userName}</span>
                     </div>
-                    <img src="/assets/icons/more.png" className={styles.footer__icon} />
+                    <img src="/assets/icons/more.png" alt="icon" className={styles.footer__icon} />
                 </div>
             </div>
         </aside>
