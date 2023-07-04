@@ -19,8 +19,8 @@ const PageView = ({
     useEffect(() => {
         const chart = chartRef.current;
         if (chart) {
-            chartRef.current.canvas.style.width = `${chartContainerRef.current.clientWidth}px`;
-            chartRef.current.canvas.style.height = `${Math.ceil(window.innerHeight*0.4)}px`;
+            //chartRef.current.canvas.style.width = `${chartContainerRef.current.clientWidth}px`;
+            //chartRef.current.canvas.style.height = `${Math.ceil(window.innerHeight*0.4)}px`;
         };
     }, [innerWidth, isLoading])
 
@@ -73,20 +73,26 @@ const PageView = ({
                                             //display: false,
                                             color: '#fff'
                                         },
+                                        ticks: {
+                                            display: true,
+                                            min: 0,
+                                        }
                                     },
                                     y: {
                                         border : {
-                                            //display: false,
                                             dash: [10],
                                             dashOffset: 4,
                                             color: '#fff'
                                         },
                                         grid : {
-                                            color: 'rgba(0,0,0,0.1)',
+                                            color: 'rgba(0,0,0,0.2)',
                                             display: true,
-                                            z: 1,
                                         },
-                                        grace: "1%",
+                                        ticks: {
+                                            display: true,
+                                            beginAtZero: true,
+                                            min: 0,
+                                        },
                                     }
                                 },
                                 plugins: {
