@@ -81,7 +81,12 @@ const PageView = ({
                                             dashOffset: 4,
                                             color: '#fff'
                                         },
-                                        //grace: "1%",
+                                        grid : {
+                                            color: 'rgba(0,0,0,0.1)',
+                                            display: true,
+                                            z: 1,
+                                        },
+                                        grace: "1%",
                                     }
                                 },
                                 plugins: {
