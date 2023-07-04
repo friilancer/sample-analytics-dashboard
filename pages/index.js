@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { useEffect, useState } from 'react'
+import { Fragment, useEffect, useState } from 'react'
 import PageView from '../components/dashboard/PageViews'
 import StatsCard from '../components/dashboard/StatsCard'
 import Pill from '../components/pill'
@@ -8,6 +8,7 @@ import styles from '../styles/Dashboard.module.css'
 const Home = () => {
   const [activeFilterId, setActiveFilterId] = useState(4)
   const [isLoading, setIsLoading] = useState(true)
+  const [name, setName] = useState('Blessing')
   const filterOptions = [
     {
       label: '1 Day',
@@ -60,7 +61,7 @@ const Home = () => {
         <h4 className={styles.title}>Dashboard</h4>
         <div className={styles.header}>
          <div>
-          <h3 className={styles.header__title}>Good morning, Blessing ⛅️</h3>
+          <h3 className={styles.header__title}>Good morning, {name} ⛅️</h3>
           <div className={styles.header__subtitle}>Check out your dashboard summary.</div>
          </div>
          <div className={styles.header__actions}>
@@ -70,18 +71,21 @@ const Home = () => {
 
         <div className={styles.filters__container}>
           <div className={styles.filters}>
+            <>
           {
             filterOptions.map((option, index) => {
               return (
+                <Fragment key={index}>
                 <Pill
                   id={index}
                   text={option.label}
                   isActive={activeFilterId === index}
                   onClick={() => setActiveFilterId(index)}
                 />
+                </Fragment>
               )
             })
-          }
+          }</>
           </div>
         </div>
         <div className={styles.pane__pageview}>
