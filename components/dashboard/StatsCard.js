@@ -92,6 +92,13 @@ const Card = ({
                                         borderWidth: 0 
                                     }]
                                 }}
+                                options={{
+                                    plugins: {
+                                        legend: {
+                                            display: false
+                                        },
+                                    },
+                                }}
                                 
                             />
                         </div>

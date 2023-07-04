@@ -8,15 +8,15 @@
     "start": "next start",
     "lint": "next lint",
     "test": "jest --watch",
-    "predeploy" : "npm run build",
-    "deploy" : "gh-pages -d build"
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "chart.js": "^4.3.0",
     "dayjs": "^1.11.9",
     "next": "12",
     "react": "18.2.0",
-    "react-chartjs-2": "^5.2.0",
+    "react-chartjs-2": "4.3.1",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
