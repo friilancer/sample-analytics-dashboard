@@ -1,43 +1,11 @@
 import { Line } from "react-chartjs-2"
 import dayjs from "dayjs";
-import { 
-    Chart as ChartJS, 
-    LineElement, 
-    PointElement, 
-    LinearScale, 
-    Title,
-    CategoryScale,
-    LogarithmicScale,
-    RadialLinearScale,
-    TimeScale,
-    TimeSeriesScale,
-    Decimation,
-    Filler,
-    Legend,
-    Tooltip,
-    SubTitle
-} from "chart.js";
+import 'chart.js/auto';
 import styles from "../../styles/PageViews.module.css"
 import { useEffect, useRef, useState } from "react";
 import Spinner from "../spinner";
 import useWindowWidth from "../../hooks/useWindowWidth";
 
-
-ChartJS.register(
-    LineElement, 
-    PointElement, 
-    LinearScale, 
-    Title,
-    CategoryScale,
-    LogarithmicScale,
-    RadialLinearScale,
-    TimeScale,
-    TimeSeriesScale,
-    Decimation,
-    Filler,
-    //Legend,
-    Tooltip
- );
 
 const PageView = ({
     graphData = {},
@@ -118,6 +86,11 @@ const PageView = ({
                                         },
                                         grace: "1%",
                                     }
+                                },
+                                plugins: {
+                                    legend: {
+                                        display: false
+                                    },
                                 },
                                 maintainAspectRatio: false, 
                             }}
