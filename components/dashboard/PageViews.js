@@ -70,16 +70,18 @@ const PageView = ({
                                 scales: {
                                     x: {
                                         grid : {
-                                            display: false,
+                                            //display: false,
+                                            color: '#fff'
                                         },
-                                        grace: "5%",
                                     },
                                     y: {
                                         border : {
-                                            display: false,
-                                            dash: [10]
+                                            //display: false,
+                                            dash: [10],
+                                            dashOffset: 4,
+                                            color: '#fff'
                                         },
-                                        grace: "1%",
+                                        //grace: "1%",
                                     }
                                 },
                                 plugins: {
