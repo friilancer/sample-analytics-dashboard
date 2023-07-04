@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import { Fragment, useEffect, useState } from 'react'
+import React, { Fragment, useEffect, useState } from 'react'
 import PageView from '../components/dashboard/PageViews'
 import StatsCard from '../components/dashboard/StatsCard'
 import Pill from '../components/pill'
@@ -71,21 +71,20 @@ const Home = () => {
 
         <div className={styles.filters__container}>
           <div className={styles.filters}>
-            <>
           {
             filterOptions.map((option, index) => {
               return (
                 <Fragment key={index}>
-                <Pill
-                  id={index}
-                  text={option.label}
-                  isActive={activeFilterId === index}
-                  onClick={() => setActiveFilterId(index)}
-                />
+                  <Pill
+                    id={index}
+                    text={option.label}
+                    isActive={activeFilterId === index}
+                    onClick={() => setActiveFilterId(index)}
+                  />
                 </Fragment>
               )
             })
-          }</>
+          }
           </div>
         </div>
         <div className={styles.pane__pageview}>

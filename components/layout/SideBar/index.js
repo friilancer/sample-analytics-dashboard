@@ -1,4 +1,4 @@
-import { Fragment, useState } from "react"
+import React, { Fragment, useState } from "react"
 import NavGroup from "./NavGroup"
 import styles from "../../../styles/Sidebar.module.css"
 

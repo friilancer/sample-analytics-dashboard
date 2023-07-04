@@ -54,7 +54,7 @@ const PageView = ({
             chartRef.current.canvas.style.width = `${chartContainerRef.current.clientWidth}px`;
             chartRef.current.canvas.style.height = `${Math.ceil(window.innerHeight*0.4)}px`;
         };
-    }, [innerWidth])
+    }, [innerWidth, isLoading])
 
     return (
         <div className={styles.container}>

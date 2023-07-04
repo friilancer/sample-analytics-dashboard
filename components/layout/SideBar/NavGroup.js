@@ -1,6 +1,6 @@
 import NavItem from "./NavItem"
 import styles from "../../../styles/Sidebar.module.css"
-import { Fragment } from "react"
+import React, { Fragment } from "react"
 
 const NavGroup = ({ items = [], title = "", activeTile = "Dashboard" }) => {
     return (
